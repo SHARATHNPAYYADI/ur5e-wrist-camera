@@ -95,7 +95,7 @@ Build and launch as above. In RViz, switch off **MotionPlanning → Planning Req
 **1. Check the camera (Problem 1).** In a second terminal:
 
 ```bash
-ros2 topic hz /wrist_cam/image_raw --use-sim-time        # about 15 Hz
+ros2 topic hz /wrist_cam/image_raw --use-sim-time        # 14 to 15 Hz, see Known issues
 ros2 topic echo /wrist_cam/camera_info --once            # 640x480, frame_id camera_optical_frame
 ros2 run tf2_ros tf2_echo base_link camera_optical_frame # changes when the arm moves
 ```
@@ -142,7 +142,7 @@ Each line of `poses.jsonl` holds the image path, simulation timestamp, the six j
 
 **Intrinsics.** Focal length 18.15 mm and horizontal aperture 20.955 mm give fx = fy ≈ 554.3 px at 640 px width, with the principal point at the image centre and no distortion. `camera_info.yaml` stores what Isaac Sim publishes.
 
-**Rate and time.** The simulation steps at 60 Hz. `frameSkipCount = 3` on both camera helpers publishes every 4th frame, which is 15 Hz, and keeps each image paired with its `camera_info`. `useSystemTime` stays off, so stamps are simulation time. `frame_id` is `camera_optical_frame`.
+**Rate and time.** The simulation steps at 60 Hz. `frameSkipCount = 3` on both camera helpers publishes every 4th frame, which targets 15 Hz, and keeps each image paired with its `camera_info`. `useSystemTime` stays off, so stamps are simulation time. `frame_id` is `camera_optical_frame`.
 
 **Target cube.** A fixed red cube with a 0.1 m edge, centre `(0.5, 0, 0.05)`. `world → base_link` is the identity, so the position is the same in both frames.
 
@@ -158,6 +158,7 @@ Each line of `poses.jsonl` holds the image path, simulation timestamp, the six j
 - **The cube is not in MoveIt's planning scene.** MoveIt does not know about it and would not avoid it. The 5 poses keep the arm away from the cube, but this was only checked with a rough model offline.
 - **Views 3 to 5 look alike.** The cube is symmetric and all red, so different viewing directions give similar pictures. The numbers in `poses.jsonl` differ.
 - **No lens distortion.** The camera is an ideal pinhole, so this check cannot reveal distortion errors.
+- **The image rate is slightly under 15 Hz.** `ros2 topic hz --use-sim-time` reports about 14.3 Hz. Most gaps between images are 0.067 s, but some are 0.133 s, so roughly one image in 15 is skipped. I did not find the cause. Images and `camera_info` are still stamped with simulation time, and `capture_poses` waits for a fresh image, so the captured data is not affected.
 - **Depth images (bonus) are not done.**
 - **First start of Isaac Sim can exceed the 180 s bridge wait.** See the note under Launch.
 - **Tested on one machine** (Ubuntu 24.04, ROS 2 Jazzy, Isaac Sim 6.0). There is no automated test.
