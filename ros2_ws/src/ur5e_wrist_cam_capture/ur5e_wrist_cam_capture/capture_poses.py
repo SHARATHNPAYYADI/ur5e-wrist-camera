@@ -77,7 +77,7 @@ class CaptureNode(Node):
         self.declare_parameter("camera_info_topic", "/wrist_cam/camera_info")
         self.declare_parameter("velocity_scale", 0.3)
         self.declare_parameter("settle_time_s", 1.0)       # sim seconds with no motion
-        self.declare_parameter("settle_velocity", 0.005)   # rad/s counted as "stopped"
+        self.declare_parameter("settle_velocity", 0.03)   # rad/s counted as "stopped"
         self.declare_parameter("goal_tolerance", 0.01)     # rad, final joint error
         self.declare_parameter("settle_timeout_s", 90.0)   # wall-clock seconds to wait for it
         self.declare_parameter("cube_position", [0.5, 0.0, 0.05])
