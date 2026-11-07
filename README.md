@@ -78,6 +78,8 @@ The ROS terminal and Isaac Sim need the same `ROS_DOMAIN_ID`. The bridge graph u
 
 Adds an RGB camera on the UR5e wrist, publishes it over ROS 2, captures 5 images at 5 MoveIt poses, and checks them by projecting the cube's known 3D position into each image.
 
+Screen recording (1:30): [docs/wrist_cam_demo.mp4](docs/wrist_cam_demo.mp4)
+
 ## What was added
 
 | File | Change |
