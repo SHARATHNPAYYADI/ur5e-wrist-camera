@@ -39,6 +39,18 @@
     smart_panel="$(arg smart_panel)">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:ur_robot>
+  <link name="camera_link"/>
+  <joint name="camera_joint" type="fixed">
+    <parent link="tool0"/>
+    <child link="camera_link"/>
+    <origin xyz="0 -0.06 0.04" rpy="1.5708 -1.5708 0"/>  <!-- camera x (forward) = tool0 z -->
+  </joint>
+  <link name="camera_optical_frame"/>
+  <joint name="camera_optical_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_optical_frame"/>
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>   <!-- ROS optical: z fwd, x right, y down -->
+  </joint>
 
   <ros2_control name="$(arg name)" type="system">
     <hardware>
