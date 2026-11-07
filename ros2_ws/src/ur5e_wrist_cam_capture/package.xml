@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ur5e_wrist_cam_capture</name>
+  <version>0.1.0</version>
+  <description>Move the UR5e to saved joint poses with MoveIt and save one wrist-camera image, joint angles and camera pose at each.</description>
+  <maintainer email="sharathnpayyadi@gmail.com">Sharath</maintainer>
+  <license>Apache-2.0</license>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>moveit_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>tf2_ros_py</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

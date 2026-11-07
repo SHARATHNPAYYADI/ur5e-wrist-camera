@@ -1,0 +1,22 @@
+# Five joint goals for the UR5e, in RADIANS, in the order of joint_names.
+# Chosen so the camera sees the 0.1 m cube at (0.5, 0, 0.05) in base_link
+# from different directions. Degrees are in the comments for the RViz Joints tab.
+joint_names:
+  - shoulder_pan_joint
+  - shoulder_lift_joint
+  - elbow_joint
+  - wrist_1_joint
+  - wrist_2_joint
+  - wrist_3_joint
+
+poses:
+  - name: top_down        # -14.6, -98.7, 104.9, -96.0, -90.0, 7.1
+    q: [-0.255, -1.722, 1.830, -1.676, -1.570, 0.124]
+  - name: from_robot      # -40.6, -138.7, 138.6, -121.8, -65.0, 143.4
+    q: [-0.708, -2.421, 2.419, -2.126, -1.134, 2.503]
+  - name: from_left       # 25.2, -67.8, 86.2, -75.6, -138.7, -48.7
+    q: [0.440, -1.183, 1.505, -1.320, -2.420, -0.850]
+  - name: from_right      # -49.7, -66.3, 81.0, -55.8, -57.5, 25.0
+    q: [-0.867, -1.157, 1.413, -0.974, -1.003, 0.437]
+  - name: far_side        # -9.6, -36.4, 22.2, -31.3, -96.7, -6.5
+    q: [-0.167, -0.635, 0.387, -0.547, -1.687, -0.113]
