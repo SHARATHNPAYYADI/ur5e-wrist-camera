@@ -1,0 +1,47 @@
+[
+  {
+    "image": "images/00_top_down.png",
+    "u": 320.4464360624788,
+    "v": 238.04117733726363,
+    "depth_m": 0.3490487235019678,
+    "in_image": true,
+    "on_cube": true,
+    "dist_to_red_centroid_px": 0.8377766551518029
+  },
+  {
+    "image": "images/01_from_robot.png",
+    "u": 317.8935765176735,
+    "v": 240.99646962821754,
+    "depth_m": 0.39124975717277966,
+    "in_image": true,
+    "on_cube": true,
+    "dist_to_red_centroid_px": 1.0608394928667448
+  },
+  {
+    "image": "images/02_from_left.png",
+    "u": 321.4944058961472,
+    "v": 241.91024753946743,
+    "depth_m": 0.36088841903270147,
+    "in_image": true,
+    "on_cube": true,
+    "dist_to_red_centroid_px": 4.7766394345568
+  },
+  {
+    "image": "images/03_from_right.png",
+    "u": 318.1753190429891,
+    "v": 239.96977319870282,
+    "depth_m": 0.3599285065527714,
+    "in_image": true,
+    "on_cube": true,
+    "dist_to_red_centroid_px": 5.524123635700453
+  },
+  {
+    "image": "images/04_far_side.png",
+    "u": 319.06759175628645,
+    "v": 241.08417478801735,
+    "depth_m": 0.3510075077550082,
+    "in_image": true,
+    "on_cube": true,
+    "dist_to_red_centroid_px": 1.1687239056730603
+  }
+]
